@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<body class="home-page">
+<h2>All Blog Posts</h2>
+<ul class="blog-list">
+    {% for post in posts %}
+        <li>
+            <a href="{{ url_for('blog', id=post.id) }}">{{ post.title }}</a>
+        </li>
+    {% endfor %}
+</ul>
+
+<!-- <footer style="background: linear-gradient(to right, #796571, #333); color: white; padding: 25px 10px; text-align: center; margin-top: 40px;">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <p style="margin: 5px 0;">Created by Razeen,Chanakya,Mitravardhan</p>
+        <p>Their instagram profiles are metioned below*</p>
+       
+        <div style="margin-top: 5px;">
+            <a href="https://www.instagram.com/shaik_razeen?igsh=Z2tlOHRzcDF1d24x" target="_blank" style="color: white; margin: 0 10px; text-decoration: none;">
+                @Razeen
+            </a>
+            <a href="https://www.instagram.com/srichanakyachunchu?igsh=emlienhkeGdtNGVk" target="_blank" style="color: white; margin: 0 10px; text-decoration: none;">
+                @Chanakya
+            </a>
+            <a href="https://www.instagram.com/mithravardhan?igsh=MW9hdjJ1dXJ2c2djcg==" target="_blank" style="color: white; margin: 0 10px; text-decoration: none;">
+                @Mithravardhan
+            </a>
+        </div>
+    </div>
+</footer> -->
+
+</body>
+{% endblock %}

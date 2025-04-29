@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Welcome, {{ user.username }}</h2>
+<h3>Your Blogs:</h3>
+
+<!-- Loop through each blog -->
+<ul>
+    {% for blog in blogs %}
+        <li>
+            <!-- Container for blog title and delete button -->
+            <div class="blog-title-container">
+                <h2>{{ blog.title }}</h2>
+                
+                <form action="{{ url_for('delete_blog', blog_id=blog.id) }}" method="POST">
+                    <div class="delete-btn-container">
+                        <button type="submit" class="delete-btn">
+                            <i class="fa fa-trash"></i> Delete
+                        </button>
+                    </div>
+                </form>
+                
+            </div>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
